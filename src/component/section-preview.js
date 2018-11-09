@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 import PreviewDisplay from './preview';
 import ViewSelector from './view-selector';
@@ -32,6 +33,17 @@ const styles = (theme) => ({
 });
 
 class SectionPreview extends React.PureComponent {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    rootClassName: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    view: PropTypes.string.isRequired
+  };
+
+  static defaultProps = {
+    rootClassName: null
+  };
+  
   render() {
     const { classes, rootClassName } = this.props;
     return (

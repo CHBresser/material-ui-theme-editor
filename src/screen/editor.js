@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { createMuiTheme, withStyles } from '@material-ui/core/styles';
 import SectionEdition from '../component/section-edition';
 import SectionPreview from '../component/section-preview';
@@ -28,6 +29,10 @@ const styles = (theme) => ({
 });
 
 class Editor extends React.Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  };
+  
   state = {
     theme: createMuiTheme(),
     view: 'desktop',

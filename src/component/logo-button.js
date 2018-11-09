@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
   root: {
@@ -14,6 +15,10 @@ const styles = (theme) => ({
 });
 
 class LogoButton extends React.PureComponent {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  };
+  
   render() {
     return (
       <a

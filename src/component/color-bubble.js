@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
+import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
   root: {
@@ -12,6 +13,12 @@ const styles = (theme) => ({
 });
 
 class ColorBubble extends React.PureComponent {
+  static propTypes = {
+    className: PropTypes.string.isRequired,
+    classes: PropTypes.object.isRequired,
+    color: PropTypes.string.isRequired,
+  }
+  
   getStyle() {
     return { backgroundColor: this.props.color };
   }

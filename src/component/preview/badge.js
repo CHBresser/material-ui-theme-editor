@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Badge from '@material-ui/core/Badge';
 import MailIcon from '@material-ui/icons/Mail';
@@ -13,6 +14,10 @@ const styles = (theme) => ({
 });
 
 class PreviewBadge extends React.PureComponent {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  };
+  
   render() {
     const { classes } = this.props;
     return (
