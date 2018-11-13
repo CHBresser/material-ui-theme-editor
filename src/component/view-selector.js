@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import DesktopWindows from '@material-ui/icons/DesktopWindows';
@@ -13,7 +14,12 @@ const styles = () => ({
   },
 });
 
-class ViewSelector extends React.PureComponent {
+class ViewSelector extends React.PureComponent { 
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+  };
+  
   handleChange = (e, value) =>
     this.props.onChange(value);
 

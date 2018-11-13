@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 import LogoButton from './logo-button';
 import PaletteEditionCard from './palette-edition-card';
@@ -53,6 +54,12 @@ const paletteFields = {
 };
 
 class SectionEdition extends React.PureComponent {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    rootClassName: PropTypes.string.isRequired,
+    theme: PropTypes.object.isRequired,
+  };
+  
   handleChangePalette = (name, changes) => {
     this.props.onChange({
       ...this.props.theme,

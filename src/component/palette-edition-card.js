@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
 
 import ColorEditionListItem from './color-edition-list-item';
 
@@ -18,6 +19,14 @@ const styles = (theme) => ({
 });
 
 class PaletteEditionCard extends React.PureComponent {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    palette: PropTypes.object.isRequired,
+    rootClassName: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    fields: PropTypes.array.isRequired
+  }
+  
   handleChange = (name, value) => {
     this.props.onChange(this.props.name, {
       ...this.props.palette,
@@ -52,5 +61,7 @@ class PaletteEditionCard extends React.PureComponent {
     );
   }
 }
+
+
 
 export default withStyles(styles)(PaletteEditionCard);

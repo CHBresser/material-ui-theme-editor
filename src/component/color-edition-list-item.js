@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Popover from '@material-ui/core/Popover';
+import PropTypes from 'prop-types';
 
 import ColorBubble from './color-bubble';
 
@@ -20,6 +21,14 @@ const anchorOrigin = {
 };
 
 class ColorEditionListItem extends React.Component {
+   static propTypes = {
+    classes: PropTypes.object.isRequired,
+    rootClassName: PropTypes.string
+  }
+
+  static defaultProps = {
+    rootClassName: null
+  };
   state = {
     anchor: null,
   };

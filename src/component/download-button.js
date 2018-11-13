@@ -2,10 +2,19 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import CloudDownload from '@material-ui/icons/CloudDownload';
 import Tooltip from '@material-ui/core/Tooltip';
+import PropTypes from 'prop-types';
 
 import ThemeService from '../service/theme';
 
 export default class DownloadButton extends React.Component {
+  static propTypes = {
+    rootClassName: PropTypes.string
+  };
+
+  static defaultProps = {
+    rootClassName: null
+  };
+  
   state = {
     running: false,
   };
