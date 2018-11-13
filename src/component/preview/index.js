@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 
-import PreviewAppBar from './app-bar';
-import PreviewBadge from './badge';
-import PreviewBottomNavigation from './bottom-navigation';
-import PreviewButton from './button';
+import PreviewContainer from './container';
 
 export default class PreviewDisplay extends React.PureComponent {
   static propTypes = {
@@ -15,14 +11,9 @@ export default class PreviewDisplay extends React.PureComponent {
   }
   render() {
     return (
-      <Paper className={this.props.className}>
-        <MuiThemeProvider theme={this.props.theme}>
-          <PreviewAppBar />
-          <PreviewBadge />
-          <PreviewBottomNavigation />
-          <PreviewButton />
-        </MuiThemeProvider>
-      </Paper>
+      <MuiThemeProvider theme={this.props.theme}>
+        <PreviewContainer className={this.props.className} />
+      </MuiThemeProvider>
     );
   }
 }
